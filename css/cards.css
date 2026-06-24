@@ -1,0 +1,156 @@
+﻿.resource-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 24px;
+  min-height: 260px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.16);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 120, 212, 0.25);
+  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.24);
+}
+
+.resource-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.resource-card p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+.resource-card .resource-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+.resource-card .resource-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  color: #e7f2ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.resource-card .resource-cta::after {
+  content: '→';
+}
+
+.diagram-node {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.diagram-node:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 120, 212, 0.26);
+}
+
+.diagram-node h3 {
+  margin: 0;
+}
+
+.diagram-node p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.diagram-node .node-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(0, 120, 212, 0.16);
+  color: #d7ecff;
+  font-weight: 700;
+}
+
+.diagram-connector {
+  position: relative;
+  overflow: visible;
+}
+
+.diagram-connector::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -24px;
+  width: 2px;
+  height: 28px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(0, 120, 212, 0.55), rgba(255, 255, 255, 0.12));
+}
+
+.diagram-connector::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 8px);
+  bottom: -10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(0, 120, 212, 0.6);
+}
+
+.progress-card .progress-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.progress-card .progress-bar {
+  width: 100%;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.progress-card .progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #41b2ff 0%, #0067c5 100%);
+  transition: width 700ms ease;
+}
+
+.progress-card span {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.hidden {
+  display: none !important;
+}

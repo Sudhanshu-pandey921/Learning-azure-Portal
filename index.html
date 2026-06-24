@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure Interactive Learning Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="loader-shell" id="loader-shell">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <p>Loading Azure learning environment</p>
+    </div>
+  </div>
+  <div class="portal-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AZ</div>
+        <div class="brand-copy">
+          <h1>Azure Learn</h1>
+          <p>Interactive training portal</p>
+        </div>
+      </div>
+      <nav class="nav-menu" aria-label="Primary navigation">
+        <button class="nav-item active" data-target="hero-section">Overview</button>
+        <button class="nav-item" data-target="resources-section">Resources</button>
+        <button class="nav-item" data-target="diagram-section">Diagram</button>
+        <button class="nav-item" data-target="notes-panel">Insights</button>
+      </nav>
+      <div class="sidebar-support">
+        <div class="support-badge">Azure Cloud Design</div>
+        <p>Premium learning experience for cloud engineers, developers and architects.</p>
+      </div>
+      <div class="sidebar-footer">
+        <div class="theme-chip">Light / Dark</div>
+        <span>Built with HTML, CSS, JavaScript</span>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="page-top">
+        <div class="top-left">
+          <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div>
+            <p class="eyebrow">Azure Interactive Learning Portal</p>
+            <h2>Explore Azure infrastructure with interactive cards, animated diagrams and contextual guidance.</h2>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="action-pill" id="theme-toggle" type="button">Toggle Theme</button>
+          <div class="search-control">
+            <label for="search-input" class="visually-hidden">Search resources</label>
+            <input id="search-input" type="search" placeholder="Search Azure resources, terms or use cases" autocomplete="off">
+          </div>
+        </div>
+      </header>
+      <section class="hero" id="hero-section">
+        <div class="hero-copy">
+          <span class="tag">Microsoft Learn style interface</span>
+          <h1>Build Azure confidence step by step with rich guided resource learning.</h1>
+          <p>Each Azure resource is explained in easy Hindi-English language, so architects and developers can adopt cloud skills quickly.</p>
+          <div class="hero-actions">
+            <button class="primary-button" id="explore-resources">Explore Resources</button>
+            <button class="secondary-button" id="view-diagram">View Architecture</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-panel">
+            <div class="visual-chip">Interactive diagram</div>
+            <div class="visual-lines">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="visual-card">
+              <div class="visual-card-title">Azure VM flow</div>
+              <p>Resource group → VNet → Subnet → NSG → VM</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="stats-grid">
+        <article class="stat-card glass">
+          <p>Interactive modules</p>
+          <h3>9 core resources</h3>
+        </article>
+        <article class="stat-card glass">
+          <p>Retention-first learning</p>
+          <h3>Hindi + English mix</h3>
+        </article>
+        <article class="stat-card glass">
+          <p>Design and animation</p>
+          <h3>Dark / Light mode</h3>
+        </article>
+      </section>
+      <section class="resource-section" id="resources-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Resource library</p>
+            <h2>Azure infrastructure components</h2>
+          </div>
+          <p>Every card opens a detailed slide panel with explanations, use cases and avoidance guidance.</p>
+        </div>
+        <div class="resource-grid" id="resource-grid"></div>
+      </section>
+      <section class="diagram-section" id="diagram-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Architecture diagram</p>
+            <h2>Interactive Azure infrastructure flow</h2>
+          </div>
+          <p>Click any node to open the guided learning panel and understand the role of each resource.</p>
+        </div>
+        <div class="diagram-board" id="diagram-board"></div>
+      </section>
+      <section class="notes-panel" id="notes-panel">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Learning progress</p>
+            <h2>Track your Azure comfort level</h2>
+          </div>
+          <p>Visual metrics help you identify which concepts are core and which require deeper review.</p>
+        </div>
+        <div class="progress-grid" id="progress-grid"></div>
+      </section>
+    </main>
+  </div>
+  <div class="panel-overlay hidden" id="panel-overlay"></div>
+  <aside class="slide-panel hidden" id="detail-panel" aria-labelledby="detail-title" role="dialog" aria-modal="true">
+    <div class="panel-header">
+      <div>
+        <h2 id="detail-title"></h2>
+        <p id="detail-subtitle"></p>
+      </div>
+      <button class="panel-close" id="panel-close" aria-label="Close panel">×</button>
+    </div>
+    <div class="panel-body"></div>
+  </aside>
+  <script src="js/data.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/sidebar.js" defer></script>
+  <script src="js/popup.js" defer></script>
+  <script src="js/search.js" defer></script>
+  <script src="js/diagram.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

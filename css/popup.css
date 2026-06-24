@@ -1,0 +1,50 @@
+﻿.panel-header,
+.panel-body,
+.panel-section {
+  color: var(--text);
+}
+
+.panel-body {
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+
+.panel-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+.panel-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.panel-section p {
+  color: var(--text-muted);
+}
+
+.panel-section code {
+  font-family: 'Courier New', monospace !important;
+  word-break: break-all;
+}
+
+.button-group button {
+  transition: all 180ms ease;
+}
+
+.button-group button:hover {
+  background: rgba(0, 120, 212, 0.26) !important;
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .slide-panel {
+    width: 100%;
+  }
+}
